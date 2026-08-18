@@ -164,6 +164,7 @@
   --mono:    ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 
   --measure: 62ch;
+  --longmeasure: 80ch;
   --gutter: clamp(1.5rem, 5vw, 5rem);
 }
 
@@ -298,6 +299,10 @@ h2 {
 }
 .live:hover, .live:focus-visible { background: var(--accent); color: var(--paper); }
 
+.live.bottom {
+  margin-left: 0;
+}
+
 .note {
   max-width: var(--measure);
   color: var(--muted);
@@ -306,10 +311,14 @@ h2 {
 }
 
 /* --- Also / side practice ----------------------------------------------- */
-.also { list-style: none; margin: 0; padding: 0; max-width: var(--measure); }
+.also { list-style: none; margin: 0; padding: 0; max-width: var(--longmeasure); }
 .also li { padding: 0.55rem 0; border-bottom: 1px solid var(--rule); }
 .also strong { font-weight: 600; }
 .also span { color: var(--muted); }
+
+.also-text-linked {
+  margin-right: 0.6rem;
+}
 
 /* --- Status ------------------------------------------------------------- */
 .status {
@@ -425,13 +434,14 @@ a:focus-visible, .skip:focus-visible {
       <ul class="also">
         <li>
           <strong>eQuills</strong>
-          <span>— digital calligraphy tools, built with Letrismo</span>
-          <a class="live" href="https://www.equills.letrismo.com/" rel="noopener" target="_blank">Live</a>
+          <span class="also-text-linked">— digital calligraphy tools, built with Letrismo.</span>
+          <a class="live bottom" href="https://www.equills.letrismo.com/" rel="noopener" target="_blank">Live</a>
         </li>
         <li>
           <strong>R(&amp;)D</strong>
-          <span>— art and technology collective. Installations and audiovisual
-          performance.</span>
+          <span class="also-text-linked">— art &amp; technology collective: installations and audiovisual
+          performances.</span>
+          <a class="live bottom" href="https://www.instagram.com/rad___co/" rel="noopener" target="_blank">Records</a>
         </li>
         <li>
           <strong>CENTRO</strong>
