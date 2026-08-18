@@ -1,0 +1,16 @@
+{
+  "name": "Andrew Alva — Creative Technologist & WebGL Developer",
+  "short_name": "Andrew Alva",
+  "description": "Creative technologist and frontend developer specializing in WebGL, Three.js and GLSL.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#F5F5F2",
+  "theme_color": "#F5F5F2",
+  "lang": "en",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

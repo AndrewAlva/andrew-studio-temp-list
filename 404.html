@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Andrew Alva</title>
+<meta name="description" content="That page doesn't exist. Head back to andrew.studio.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101216" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<style>
+:root {
+  --paper: #F5F5F2; --ink: #14161A; --muted: #6B6E76; --accent: #1B34C7;
+  --display: "Helvetica Now Display", "Neue Haas Grotesk Display", Inter, system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #101216; --ink: #F0EFEA; --muted: #8E9199; --accent: #8FA0FF; }
+}
+body {
+  margin: 0; min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 3rem clamp(1.5rem, 5vw, 5rem);
+  background: var(--paper); color: var(--ink);
+  font-family: var(--mono); font-size: 0.875rem;
+  -webkit-font-smoothing: antialiased;
+}
+h1 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(2.5rem, 8vw, 5rem); line-height: 0.95;
+  letter-spacing: -0.035em; margin: 0 0 1.5rem;
+}
+p { color: var(--muted); margin: 0 0 2rem; }
+a { color: var(--accent); text-underline-offset: 0.18em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+</style>
+</head>
+<body>
+  <h1>404</h1>
+  <p>That page doesn&rsquo;t exist.</p>
+  <p><a href="/">Back to andrew.studio</a></p>
+</body>
+</html>

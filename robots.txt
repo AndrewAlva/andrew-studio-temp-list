@@ -1,0 +1,7 @@
+# andrew.studio
+# Everything is public and indexable. Nothing to hide on a portfolio.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://andrew.studio/sitemap.xml
