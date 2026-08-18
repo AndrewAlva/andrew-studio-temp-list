@@ -4,25 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ==========================================================================
-     PRIMARY SEO
-     Title: 60 chars max or Google truncates. Name first — most searches for you
-     are name searches, and the name is what a recruiter is verifying.
-     ========================================================================== -->
+<!-- ============================ PRIMARY SEO ============================ -->
 <title>Andrew Alva — Creative Technologist &amp; WebGL Developer</title>
 <meta name="description" content="Creative technologist and frontend developer specializing in WebGL, Three.js and GLSL. Real-time 3D and interactive experiences built for Google, Spotify, Xbox, Sundance and Hulu at Active Theory.">
 <link rel="canonical" href="https://andrew.studio/">
 <meta name="author" content="Andrew Alva">
 
-<!-- Explicitly invite full indexing. max-image-preview:large is what lets your
-     OG image show as a large thumbnail in Google results and Discover. -->
+<!-- max-image-preview:large enables large thumbnails in Google results. -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-<!-- ==========================================================================
-     OPEN GRAPH — LinkedIn, Slack, WhatsApp, iMessage
-     This is how your link looks when a recruiter forwards it internally.
-     og:image MUST be an absolute URL and MUST be 1200×630. See README.
-     ========================================================================== -->
+<!-- ============================ OPEN GRAPH ============================= -->
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://andrew.studio/">
 <meta property="og:title" content="Andrew Alva — Creative Technologist &amp; WebGL Developer">
@@ -36,9 +27,7 @@
 <meta property="profile:first_name" content="Andrew">
 <meta property="profile:last_name" content="Alva">
 
-<!-- ==========================================================================
-     TWITTER / X
-     ========================================================================== -->
+<!-- ============================== TWITTER ============================== -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@andrew__alva">
 <meta name="twitter:creator" content="@andrew__alva">
@@ -47,12 +36,10 @@
 <meta name="twitter:image" content="https://andrew.studio/share.jpg">
 <meta name="twitter:image:alt" content="The name Alejandro Andrew Alvarado set as an overlapping blue and black wordmark.">
 
-<!-- ==========================================================================
-     ICONS
-     Wired to the RealFaviconGenerator set. favicon.svg is deliberately NOT
-     referenced — it's a 200KB base64 PNG in an <svg> wrapper, not vector.
-     See LEGACY-FILES.md.
-     ========================================================================== -->
+<!-- =============================== ICONS ===============================
+     No SVG icon declared: the generated favicon.svg is a wrapped raster
+     (~200KB) and favicon.ico renders identically at 15KB.
+     ===================================================================== -->
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -61,16 +48,7 @@
 <meta name="theme-color" content="#101216" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
 
-<!-- ==========================================================================
-     STRUCTURED DATA (JSON-LD)
-     This is what tells Google you are an *entity* — a specific person — rather
-     than a string of words. It powers the knowledge panel and helps Google
-     connect this page to your LinkedIn, GitHub and Instagram.
-
-     Note on honesty: schema.org's `award` property implies awards given to YOU
-     personally. Your recognition is contributor-level, so it is deliberately
-     omitted here and expressed in prose on the page instead. Don't add it back.
-     ========================================================================== -->
+<!-- ========================= STRUCTURED DATA =========================== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -150,11 +128,7 @@
 </script>
 
 <style>
-/* ==========================================================================
-   TOKENS
-   Palette: paper / ink / ultramarine. The blue is pulled from the R(&)D mark
-   rather than picked at random — it's already part of your visual identity.
-   ========================================================================== */
+/* ============================== TOKENS ============================== */
 :root {
   --paper:  #F5F5F2;
   --ink:    #14161A;
@@ -200,7 +174,7 @@ body {
 
 .wrap { max-width: 74rem; margin-inline: auto; }
 
-/* --- Skip link: keyboard users land on content, not the nav ------------- */
+/* --- Skip link ---------------------------------------------------------- */
 .skip {
   position: absolute;
   left: -9999px;
@@ -254,9 +228,8 @@ h2 {
 }
 
 /* --- Work list ----------------------------------------------------------
-   Definition list, not a <ul>: each entry genuinely is a term (the project)
-   paired with its description (your role). Correct semantics, and it also
-   gives screen readers the pairing for free.
+   <dl> rather than <ul>: each row is a term (project) paired with its
+   description (role), so screen readers announce the pairing.
    ----------------------------------------------------------------------- */
 .work { margin: 0; }
 
@@ -349,8 +322,7 @@ footer { margin-top: 2rem; font-style: normal; }
 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
 a:hover { text-decoration-thickness: 2px; }
 
-/* Visible focus for keyboard users — non-negotiable, and it's the kind of
-   detail a design-engineer reviewer notices immediately. */
+/* Visible focus for keyboard users. */
 a:focus-visible, .skip:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
