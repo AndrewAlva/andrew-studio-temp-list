@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrew Alva — Selected work</title>
+<meta name="description" content="A curated index of shipped work by Andrew Alva, design engineer. Real-time graphics, interface craft, production web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..800;1,62..125,300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFBF9;
+  --ink:#15171B;
+  --body:#33383F;
+  --muted:#6E747C;
+  --faint:#9AA0A7;
+  --blue:#1F35FF;
+  --rule:#E2E0DA;
+  --live:#0B7A48;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation:none !important; transition:none !important; }
+}
+
+body{
+  font-family:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-variation-settings:'wdth' 100;
+  background:var(--paper);
+  color:var(--body);
+  font-size:17px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{ color:var(--blue); text-decoration:none; border-bottom:1px solid rgba(31,53,255,.28); }
+a:hover{ border-bottom-color:var(--blue); }
+a:focus-visible{ outline:2px solid var(--blue); outline-offset:3px; border-radius:2px; }
+
+.wrap{ max-width:940px; margin:0 auto; padding:0 32px; }
+
+/* ============ masthead ============ */
+.mast{ padding:88px 0 34px; }
+
+.name{
+  font-size:clamp(52px,10.5vw,104px);
+  line-height:.9;
+  font-weight:700;
+  font-variation-settings:'wght' 700,'wdth' 84;
+  letter-spacing:-.03em;
+  color:var(--ink);
+  margin-bottom:22px;
+}
+
+.standfirst{
+  font-size:clamp(19px,2.3vw,25px);
+  line-height:1.35;
+  font-weight:500;
+  font-variation-settings:'wght' 500;
+  letter-spacing:-.017em;
+  color:var(--ink);
+  max-width:22em;
+  margin-bottom:26px;
+}
+
+.blurb{ max-width:33em; margin-bottom:16px; }
+.blurb + .blurb{ margin-bottom:26px; }
+
+.ident{
+  font-size:15px;
+  color:var(--muted);
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  padding-top:22px;
+  border-top:1px solid var(--rule);
+}
+
+/* ============ note ============ */
+.note{
+  margin:0 0 64px;
+  padding:18px 22px;
+  background:#F2F0EB;
+  border-left:2px solid var(--ink);
+  font-size:15.5px;
+  line-height:1.5;
+  max-width:44em;
+  color:var(--body);
+}
+
+/* ============ section headings ============ */
+.sechead{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:20px;
+  border-bottom:1.5px solid var(--ink);
+  padding-bottom:9px;
+  margin-bottom:8px;
+}
+.sechead h2{
+  font-size:19px;
+  font-weight:600;
+  font-variation-settings:'wght' 620,'wdth' 92;
+  letter-spacing:-.014em;
+  color:var(--ink);
+}
+.sechead .count{ font-size:14.5px; color:var(--faint); white-space:nowrap; }
+
+/* ============ work entries ============ */
+.entry{
+  display:grid;
+  grid-template-columns:1fr 216px;
+  gap:16px 40px;
+  padding:30px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+
+.entry h3{
+  font-size:27px;
+  line-height:1.12;
+  font-weight:600;
+  font-variation-settings:'wght' 640,'wdth' 92;
+  letter-spacing:-.024em;
+  color:var(--ink);
+  margin-bottom:3px;
+}
+.client{
+  font-size:15.5px;
+  color:var(--muted);
+  margin-bottom:13px;
+}
+
+.scope{
+  display:inline-block;
+  font-size:14.5px;
+  font-weight:500;
+  font-variation-settings:'wght' 520;
+  color:var(--blue);
+  margin-bottom:9px;
+}
+
+.entry p.did{ font-size:16.5px; line-height:1.52; max-width:36em; }
+
+/* right rail */
+.rail{ font-size:14.5px; line-height:1.5; padding-top:6px; }
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-size:13.5px;
+  font-weight:500;
+  font-variation-settings:'wght' 520;
+  margin-bottom:11px;
+}
+.status .dot{ width:7px; height:7px; border-radius:50%; flex:none; }
+.status.on{ color:var(--live); }
+.status.on .dot{ background:var(--live); }
+.status.off{ color:var(--faint); }
+.status.off .dot{ background:var(--faint); }
+
+.rail .honours{ color:var(--muted); margin-bottom:11px; }
+.rail .honours strong{ font-weight:600; font-variation-settings:'wght' 600; color:var(--ink); display:block; }
+
+.rail ul{ list-style:none; }
+.rail li{ margin-bottom:5px; }
+.rail li a{ font-size:14.5px; }
+
+/* ============ practice ============ */
+.practice{ margin-top:76px; }
+.pgrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:34px 42px;
+  padding-top:30px;
+}
+.pitem h4{
+  font-size:18px;
+  font-weight:600;
+  font-variation-settings:'wght' 600;
+  letter-spacing:-.015em;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.pitem .where{ font-size:14.5px; color:var(--faint); margin-bottom:8px; }
+.pitem p{ font-size:15.5px; line-height:1.5; }
+
+/* ============ close ============ */
+.close{
+  margin:76px 0 96px;
+  padding-top:34px;
+  border-top:1.5px solid var(--ink);
+}
+.close p{ max-width:36em; margin-bottom:18px; }
+.close .mail{
+  font-size:clamp(26px,4.4vw,42px);
+  font-weight:600;
+  font-variation-settings:'wght' 640,'wdth' 88;
+  letter-spacing:-.026em;
+  border-bottom-width:2px;
+}
+
+/* ============ responsive ============ */
+@media (max-width:760px){
+  body{ font-size:16px; }
+  .wrap{ padding:0 22px; }
+  .mast{ padding:56px 0 28px; }
+  .entry{ grid-template-columns:1fr; gap:14px; padding:26px 0; }
+  .rail{ padding-top:0; border-top:1px solid var(--rule); padding-top:14px; }
+  .entry h3{ font-size:23px; }
+  .note{ margin-bottom:48px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="mast">
+    <h1 class="name">Andrew Alva</h1>
+    <p class="standfirst">Design engineer. I build the interface and the rendering underneath it.</p>
+    <p class="blurb">Ten years building for the web, five of them in real-time 3D. Trained as a
+    graphic designer, I spent three and a half years at Active Theory shipping interactive work for
+    Spotify, Xbox, Google, Sundance and Hulu — starting as a junior developer, finishing having
+    owned a flagship build end to end and led the development team on another.</p>
+    <p class="blurb">My work sits where typography and motion have to survive a frame budget: WebGL
+    that coexists with accessible markup, interface polish authored as shaders, and performance
+    that holds across a real device range.</p>
+    <div class="ident">
+      <span>Mexico City</span>
+      <span><a href="mailto:hola@andrew.studio">hola@andrew.studio</a></span>
+      <span>Spanish &amp; English</span>
+    </div>
+  </header>
+
+  <p class="note">A curated index rather than a portfolio. Most of this work was commissioned,
+  launched, and later taken offline by the client, so this page points to what can still be
+  verified: the live builds, the award case studies, and the credits pages where collaborators
+  name me. Scope is stated as it actually was on each project.</p>
+
+  <section>
+    <div class="sechead">
+      <h2>Selected work</h2>
+      <span class="count">Active Theory, 2020–2024</span>
+    </div>
+
+    <!-- 1 -->
+    <article class="entry">
+      <div>
+        <h3>Playlist in a Bottle</h3>
+        <div class="client">Spotify · inaugural edition, 2023</div>
+        <span class="scope">Senior developer, end to end</span>
+        <p class="did">Architected how a WebGL scene of interactive 3D time capsules coexists with
+        an accessible HTML/CSS interface meeting WCAG — in-app and in-browser, across a wide device
+        range. Built the gesture and sound interactions with the design lead and audio studio Plan8,
+        and tuned per-device level of detail so the 3D degrades gracefully on weaker hardware
+        without breaking either the interaction or the accessibility layer.</p>
+      </div>
+      <aside class="rail">
+        <span class="status off"><span class="dot"></span>Superseded by later editions</span>
+        <div class="honours"><strong>ADC Bronze Cube, 2024</strong>Brand-Side / In-House: Interactive, UX/UI</div>
+        <ul>
+          <li><a href="https://aaronkim.co/Playlist-in-a-Bottle">Design lead's case study</a> — credits me</li>
+        </ul>
+      </aside>
+    </article>
+
+    <!-- 2 -->
+    <article class="entry">
+      <div>
+        <h3>Breakfastverse</h3>
+        <div class="client">Reese's Puffs × AMBUSH, 2022</div>
+        <span class="scope">Development lead</span>
+        <p class="did">Led the development team and brought junior developers and 3D artists up to
+        speed on real-time 3D, shader authoring and the studio's in-house framework — showing an
+        artist what a shader does to a texture or a mesh turned out to be the fastest way to make
+        the whole team quicker. Built 3D scenes and interface with the design team, plus the
+        gamified layer: collectible objects, scoring and a timer wired to the 2D UI through state
+        management.</p>
+      </div>
+      <aside class="rail">
+        <span class="status off"><span class="dot"></span>Offline</span>
+        <div class="honours"><strong>Webby Nominee, 2023</strong>Metaverse, Immersive &amp; Virtual: Best Partnership or Collaboration</div>
+        <ul>
+          <li><a href="https://www.webbyawards.com/crafted-with-code/reeses-puffs-x-ambush-breakfastverse/">Webby case study</a></li>
+        </ul>
+      </aside>
+    </article>
+
+    <!-- 3 -->
+    <article class="entry">
+      <div>
+        <h3>20 Years of Xbox Museum</h3>
+        <div class="client">Microsoft, 2021</div>
+        <span class="scope">Timeline interface &amp; shader craft</span>
+        <p class="did">Owned the horizontal timeline and its milestone navigation. The hover and
+        click microinteractions are GLSL shaders rather than CSS, which is what gives them their
+        tactile response at frame rate — shader work spent on interface polish rather than on the
+        large 3D set pieces.</p>
+      </div>
+      <aside class="rail">
+        <span class="status on"><span class="dot"></span>Live mirror</span>
+        <div class="honours"><strong>Webby Winner, 2022</strong>Plus FWA Site of the Day &amp; of the Month, Awwwards Site of the Day, Site of the Month and Developer Award, CSS Design Awards</div>
+        <ul>
+          <li><a href="https://xbox.activetheory.dev/">Visit the museum</a></li>
+          <li><a href="https://thefwa.com/cases/20-years-of-xbox-museum">FWA case study</a></li>
+        </ul>
+      </aside>
+    </article>
+
+    <!-- 4 -->
+    <article class="entry">
+      <div>
+        <h3>Celebrating 20 Years</h3>
+        <div class="client">Google News, 2022</div>
+        <span class="scope">Core team — owned the Trivia section</span>
+        <p class="did">A self-contained interactive inside the larger anniversary site: WebGL
+        background animation, transitions with some joy in them, and a micro-animation on every
+        interaction — all held to WCAG and fully responsive down to mobile. It is still live, so
+        the section I built can be played rather than described.</p>
+      </div>
+      <aside class="rail">
+        <span class="status on"><span class="dot"></span>Live now</span>
+        <ul>
+          <li><a href="https://googlenews20.withgoogle.com/">Play the Trivia section</a></li>
+          <li><a href="https://aaronkim.co/Google-News">Design lead's case study</a> — credits me</li>
+        </ul>
+      </aside>
+    </article>
+
+    <!-- 5 -->
+    <article class="entry">
+      <div>
+        <h3>Cardano Summit</h3>
+        <div class="client">IOHK, 2021 · with Dreamwave</div>
+        <span class="scope">Core team — real-time data surfaces</span>
+        <p class="did">Seven explorable worlds for a live two-day conference that drew more than
+        140,000 attendees. I built the character-customisation interfaces in plain HTML/CSS, and the
+        WebGL signage and information screens inside the 3D world — fed by a mix of CMS content and
+        state management so they updated in real time while the event ran, and holding up on VR
+        headsets as well as desktop and mobile.</p>
+      </div>
+      <aside class="rail">
+        <span class="status off"><span class="dot"></span>Offline</span>
+        <div class="honours"><strong>FWA of the Day, 2022</strong>Webby Honoree, 2022 — Virtual &amp; Remote: Best Festival or Conference</div>
+        <ul>
+          <li><a href="https://thefwa.com/cases/cardano-summit-2021">FWA case study</a></li>
+        </ul>
+      </aside>
+    </article>
+
+    <!-- 6 -->
+    <article class="entry">
+      <div>
+        <h3>New Frontier</h3>
+        <div class="client">Sundance Film Festival, 2021</div>
+        <span class="scope">Core team — my first WebGL build</span>
+        <p class="did">A WebXR festival that had to run identically on desktop, mobile and
+        standalone Oculus Quest. I built the 2D overlay interface and several interactive components
+        inside the 3D world: CMS-fed schedule screens, the room-access UI, and a screen that
+        switched between an image carousel and a trailer depending on how close the visitor stood.
+        Reading distance and transitioning smoothly across three very different device classes
+        taught me most of what I know about cross-platform WebGL.</p>
+      </div>
+      <aside class="rail">
+        <span class="status off"><span class="dot"></span>Offline</span>
+        <div class="honours"><strong>Webby Winner, 2022</strong>Virtual &amp; Remote: Arts, Fashion, Retail &amp; Culture · FWA of the Day, 2021</div>
+        <ul>
+          <li><a href="https://thefwa.com/cases/sundance-new-frontier">FWA case study</a></li>
+        </ul>
+      </aside>
+    </article>
+
+    <!-- 7 -->
+    <article class="entry">
+      <div>
+        <h3>Made by Her: Monuments</h3>
+        <div class="client">Hulu</div>
+        <span class="scope">Core team — one system across two realities</span>
+        <p class="did">The brief needed a normal desktop and mobile site and a VR experience.
+        Rather than build two things, we structured it as a single 3D-environment interface with
+        reusable components. I owned the About section and the interactive hotspots inside each
+        monument: on desktop and mobile a hotspot triggers a camera move and a close-up with
+        information; in VR the visitor physically walks to it. Same components, two very different
+        interaction models.</p>
+      </div>
+      <aside class="rail">
+        <span class="status off"><span class="dot"></span>Offline</span>
+        <div class="honours"><strong>Clio Entertainment Silver, 2022</strong>Microsite</div>
+        <ul>
+          <li><a href="https://clios.com/winners-gallery/details/152221">Clio entry</a></li>
+        </ul>
+      </aside>
+    </article>
+
+    <!-- 8 -->
+    <article class="entry">
+      <div>
+        <h3>All-RapCaviar</h3>
+        <div class="client">Spotify, 2023 &amp; 2024 editions</div>
+        <span class="scope">Core team — engineering</span>
+        <p class="did">Mobile-only, so the entire feel came from touch and drag: I built the
+        animation and transitions as WebGL shaders to keep them smooth under gesture, plus the live
+        leaderboard and a share card generated from each user's votes. The 2024 edition called for
+        some elements to animate at a deliberately choppy low frame rate while everything else held
+        60fps in the same scene — faking that convincingly, without actually dropping frames and
+        consistently across devices, is the problem I most enjoy talking about.</p>
+      </div>
+      <aside class="rail">
+        <span class="status off"><span class="dot"></span>Offline</span>
+        <div class="honours" style="color:var(--faint)">No awards — included for the engineering</div>
+        <ul>
+          <li><a href="https://www.jordanfrand.com/work#/allrap-caviar/">Producer's case study</a></li>
+        </ul>
+      </aside>
+    </article>
+  </section>
+
+  <section class="practice">
+    <div class="sechead">
+      <h2>Independent practice</h2>
+      <span class="count">Where I design and build alone</span>
+    </div>
+    <div class="pgrid">
+      <div class="pitem">
+        <h4>RAD</h4>
+        <div class="where">Collective, Mexico City · 2024–present</div>
+        <p>Audiovisual installations and live performances, self-directed from concept and art
+        direction through to the software that runs them. <a href="https://raaad.co/">raaad.co</a></p>
+      </div>
+      <div class="pitem">
+        <h4>Corpvs Inscriptionvm Futurvm</h4>
+        <div class="where">Centro de Cultura Digital · 2025</div>
+        <p>Live performance on inscription and writing, presented at Entornos Electrónicos and later
+        aboard the Barco Utopía in Iztapalapa.</p>
+      </div>
+      <div class="pitem">
+        <h4>Caligrafía 360°</h4>
+        <div class="where">Universidad La Salle · 2024</div>
+        <p>Installation for the Future Design congress, extending calligraphic mark-making into a
+        360° space.</p>
+      </div>
+      <div class="pitem">
+        <h4>eQuills</h4>
+        <div class="where">Tipografía México, Galería GAMA, Casa Bestia · 2023–24</div>
+        <p>Installation and talk on the meeting of technology, calligraphy and letterforms.</p>
+      </div>
+      <div class="pitem">
+        <h4>Teaching</h4>
+        <div class="where">CENTRO, Mexico City · 2024–present</div>
+        <p>Professor of Advanced Web Interaction &amp; Rendering — real-time rendering, WebGL and
+        interaction design, taught through hands-on projects.</p>
+      </div>
+      <div class="pitem">
+        <h4>Processing Community Catalog</h4>
+        <div class="where">Processing Foundation · 2022</div>
+        <p>Work published in the Foundation's twenty-year catalogue, 2001–2021.
+        ISBN 978-0999881323.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <p>My own site is being rebuilt; this index stands in for it meanwhile. Happy to walk through
+    any of these builds in detail — including the parts that were someone else's work.</p>
+    <a class="mail" href="mailto:hola@andrew.studio">hola@andrew.studio</a>
+  </section>
+
+</div>
+</body>
+</html>
